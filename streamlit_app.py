@@ -77,12 +77,13 @@ with right_column:
     with st.container():
         st.write("st.audio: muestra un audio en la aplicación")
         st.code(
-            """audio_file = open('https://assets.mixkit.co/active_storage/sfx/213/213.wav', 'rb')
+            """
+audio_file = open('audio.wav', 'rb')
 audio_bytes = audio_file.read()
 st.audio(audio_bytes, format='audio/wav')""",
             language="python",
         )
-        audio_file = open("2.Bases/audio.wav", "rb")
+        audio_file = open("audio.wav", "rb")
         audio_bytes = audio_file.read()
         st.audio(audio_bytes, format="audio/wav")
     st.divider()
@@ -145,8 +146,9 @@ st.json(data)""",
     with st.container():
         st.write("st.button: muestra un botón en la aplicación")
         st.code(
-            """if st.button('Click me'):
-    st.write('Clicked')""",
+            """
+if st.button('Click me'):
+st.write('Clicked')""",
             language="python",
         )
         if st.button("Click me"):
@@ -156,8 +158,9 @@ st.json(data)""",
     with st.container():
         st.write("st.checkbox: muestra un checkbox en la aplicación")
         st.code(
-            """if st.checkbox('Check me'):
-    st.write('Checked')""",
+            """
+if st.checkbox('Check me'):
+st.write('Checked')""",
             language="python",
         )
         if st.checkbox("Check me"):
@@ -167,7 +170,8 @@ st.json(data)""",
     with st.container():
         st.write("st.radio: muestra un radio button en la aplicación")
         st.code(
-            """option = st.radio('Radio', ['option 1', 'option 2'])
+            """
+option = st.radio('Radio', ['option 1', 'option 2'])
 if option == 'option 1':
     st.write('option 1 selected')
 else:
@@ -184,7 +188,8 @@ else:
     with st.container():
         st.write("st.text_input: muestra un input en la aplicación")
         st.code(
-            """name = st.text_input('Enter your name')
+            """
+name = st.text_input('Enter your name')
 st.write('Hello', name)""",
             language="python",
         )
@@ -195,7 +200,8 @@ st.write('Hello', name)""",
     with st.container():
         st.write("st.session_state: guarda el estado de la aplicación en la sesión. Esto permite cambiar valores sin que se reseteen al ejecutar la aplicación de nuevo.")
         st.code(
-            """if 'counter' not in st.session_state:
+            """
+if 'counter' not in st.session_state:
     st.session_state.counter = 0
 if st.button('Increment'):
     st.session_state.counter += 1
